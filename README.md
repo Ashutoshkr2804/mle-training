@@ -1,3 +1,4 @@
+![Screenshot (17)](https://github.com/Ashutoshkr2804/mle-training/assets/137825664/8f9355c9-be7d-4bcc-bd67-da5ddded3728)
 
 ## **Manual Refactoring of Python Code**
 
