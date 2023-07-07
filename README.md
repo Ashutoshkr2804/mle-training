@@ -28,3 +28,20 @@ black --config pyproject.toml .
 ```bash
 flake8 nonstandardcode.py
 ```
+## Command  to run isort 
+
+```
+python -m isort nonstanderedcode.py
+```
+
+## Command to run black
+
+```
+python -m black nonstanderedcode.py
+```
+
+## Command to run flake8
+
+```
+python -m flake8 nonstanderedcode.py
+```
