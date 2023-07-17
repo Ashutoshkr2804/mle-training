@@ -22,3 +22,12 @@ python score.py
 Logging
 The scripts use logging to generate logs during execution.
 ```
+
+```
+Unit tests and functional tests
+
+```
+
+```
+Used Sphinx to generate HTML documents
+```
