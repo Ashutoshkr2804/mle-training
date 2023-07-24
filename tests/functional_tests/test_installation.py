@@ -1,9 +1,20 @@
-import pytest
+def test_installation():
+    # Check if the required packages are installed
+    packages = ["pandas", "numpy", "sklearn"]
+    missing_packages = []
+    for package in packages:
+        try:
+            __import__(package)
+        except ImportError:
+            missing_packages.append(package)
 
-def test_check_dependencies():
-    # Add functional test for checking if all required dependencies are installed
-    pass
+    if missing_packages:
+        print("Some required packages are missing:")
+        for package in missing_packages:
+            print(package)
+    else:
+        print("Installation test completed successfully!")
 
-def test_missing_dependency():
-    # Add functional test for checking if the function correctly identifies a missing dependency
-    pass
+
+if __name__ == "__main__":
+    test_installation()

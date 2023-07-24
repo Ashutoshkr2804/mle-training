@@ -1,9 +1,25 @@
-import pytest
+import unittest
+import os
+from housing_library import fetch_housing_data, load_housing_data
 
-def test_train_model():
-    # Add functional test for checking if the model training completes successfully
-    pass
+class TestHousingLibraryFunctional(unittest.TestCase):
+    def test_fetch_housing_data(self):
+        housing_path = 'datasets/housing'
+        fetch_housing_data(housing_path)
 
-def test_invalid_data_file():
-    # Add functional test for checking if the function handles an invalid data file gracefully
-    pass
+        # Check if the housing.csv file exists
+        csv_path = os.path.join(housing_path, "housing.csv")
+        self.assertTrue(os.path.isfile(csv_path))
+
+    def test_load_housing_data(self):
+        housing_data = load_housing_data()
+        self.assertIsNotNone(housing_data)
+        self.assertEqual(housing_data.shape, (20640, 10))
+    def test_fetch_and_load_housing_data(self):
+        fetch_housing_data()
+        housing_data = load_housing_data()
+        # Perform test assertions to validate the fetched and loaded data
+        pass
+
+if _name_ == '_main_':
+    unittest.main()

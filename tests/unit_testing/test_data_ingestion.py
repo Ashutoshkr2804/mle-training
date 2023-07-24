@@ -1,12 +1,17 @@
-import pytest
-from my_library.data_ingestion import fetch_housing_data, load_housing_data
+import unittest
+from housing_library import mean_squared_error
 
-def test_fetch_housing_data():
-    # Add a test for checking if the housing data is fetched and extracted correctly
-    # You can use a temporary directory for testing and delete it afterward.
-    pass
+class TestHousingLibrary(unittest.TestCase):
+    def test_mean_squared_error(self):
+        y_true = [1, 2, 3]
+        y_pred = [1, 2, 3]
+        mse = mean_squared_error(y_true, y_pred)
+        self.assertEqual(mse, 0)
 
-def test_load_housing_data():
-    # Add a test for checking if the housing data is loaded correctly
-    # You can create a small sample CSV file for testing purposes.
-    pass
+        y_true = [1, 2, 3]
+        y_pred = [4, 5, 6]
+        mse = mean_squared_error(y_true, y_pred)
+        self.assertEqual(mse, 9)
+
+if _name_ == '_main_':
+    unittest.main()
